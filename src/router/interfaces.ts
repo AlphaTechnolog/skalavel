@@ -12,9 +12,7 @@ export interface IRegister {
 
 export interface IRouter {
   _register?: IRegister[];
-
   _createRoute: (method: string, url: string, callback: RouteCallback) => void;
-
   get: RouteParams;
   post: RouteParams;
   put: RouteParams;
