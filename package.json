@@ -1,9 +1,11 @@
 {
   "name": "skalavel",
   "description": "A typescript framework for write complete and scalable web applications",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
   "license": "MIT",
   "repository": "https://github.com/AlphaTechnolog/skalavel.git",
   "author": {
