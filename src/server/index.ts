@@ -16,13 +16,11 @@ export class Server implements IServer {
     });
   }
 
-  listen(port: number): void {
+  listen(port: number, callback: () => void): void {
     if (!this.server) {
       throw new Error('Cannot create the server');
     }
 
-    this.server.listen(port, () => {
-      console.log(`Server is listening on port ${port}`);
-    });
+    this.server.listen(port, callback);
   }
 }
