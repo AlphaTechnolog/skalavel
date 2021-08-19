@@ -1,6 +1,38 @@
 {
   "name": "skalavel",
-  "version": "1.0.0",
+  "description": "A typescript framework for write complete and scalable web applications",
+  "version": "0.0.1",
   "main": "index.js",
-  "license": "MIT"
+  "files": ["lib/**/*"],
+  "license": "MIT",
+  "repository": "https://github.com/AlphaTechnolog/skalavel.git",
+  "author": {
+    "name": "Gabriel Guerra",
+    "email": "gfranklings@gmail.com"
+  },
+  "keywords": [
+    "http",
+    "server",
+    "framework",
+    "web",
+    "typescript",
+    "classes"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "@types/node": "^16.6.2",
+    "prettier": "^2.3.2",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.3.5"
+  }
 }
