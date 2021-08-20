@@ -1,5 +1,6 @@
 import * as http from 'http';
 import { IRouter, IRegister } from '../router/interfaces';
+import { IController } from '../controller/interfaces';
 
 export class RouteGenerator {
   router: IRouter;
@@ -24,9 +25,14 @@ export class RouteGenerator {
           req.url === url &&
           req.method?.toLowerCase() === method
         ) {
-          res.statusCode = 200;
-          res.setHeader('Content-Type', 'text/html');
-          callback(req, res);
+          const controller: IController = callback(req, res);
+					const { _register } = controller;
+					res.statusCode = _register.statuscode;
+					for (const [name, value] of Object.entries(_register.headers)) {
+						res.setHeader(name as string, value as string);
+					}
+
+					res.end(_register.res);
         }
       },
     );

@@ -1,9 +1,10 @@
 import * as http from 'http';
+import {IController} from '../controller/interfaces';
 
 export type RouteCallback = (
   req: http.IncomingMessage,
   res: http.ServerResponse,
-) => void;
+) => IController;
 
 export type RouteParams = (
   url: string,
