@@ -36,8 +36,8 @@ export class Server implements IServer {
     }
 
     this.tasks.forEach((Task: ITaskConstructor) => {
-			const task = new Task();
-			task.run();
+      const task = new Task();
+      task.run();
     });
   }
 
