@@ -4,9 +4,7 @@ export interface IControllerRegister {
 	headers: any;
 }
 
-export interface IControllerConstructor {
-	new(): IController;
-}
+export type IControllerConstructor = new() => IController;
 
 export interface IController {
 	_register: IControllerRegister;

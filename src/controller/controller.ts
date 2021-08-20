@@ -12,7 +12,7 @@ export const Controller: IControllerConstructor = class Controller implements IC
 		}
 	}
 
-	_rawRes(response: any, headers: Object, statuscode: number): void {
+	_rawRes(response: any, headers: any, statuscode: number): void {
 		this._register.res = JSON.stringify(response);
 		this._register.headers = headers;
 		this._register.statuscode = statuscode;
