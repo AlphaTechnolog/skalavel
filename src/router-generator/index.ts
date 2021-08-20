@@ -26,13 +26,15 @@ export class RouteGenerator {
           req.method?.toLowerCase() === method
         ) {
           const controller: IController = callback(req, res);
-					const { _register } = controller;
-					res.statusCode = _register.statuscode;
-					for (const [name, value] of Object.entries(_register.headers)) {
-						res.setHeader(name as string, value as string);
-					}
+          const { _register } = controller;
+          res.statusCode = _register.statuscode;
+          for (const [name, value] of Object.entries(
+            _register.headers,
+          )) {
+            res.setHeader(name as string, value as string);
+          }
 
-					res.end(_register.res);
+          res.end(_register.res);
         }
       },
     );

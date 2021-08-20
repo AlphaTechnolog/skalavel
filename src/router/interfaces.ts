@@ -1,5 +1,5 @@
 import * as http from 'http';
-import {IController} from '../controller/interfaces';
+import { IController } from '../controller/interfaces';
 
 export type RouteCallback = (
   req: http.IncomingMessage,

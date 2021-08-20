@@ -1,15 +1,19 @@
 export interface IControllerRegister {
-	res: string;
-	statuscode: number;
-	headers: any;
+  res: string;
+  statuscode: number;
+  headers: any;
 }
 
-export type IControllerConstructor = new() => IController;
+export type IControllerConstructor = new () => IController;
 
 export interface IController {
-	_register: IControllerRegister;
-	_rawRes: (response: any, headers: any, statuscode: number) => void;
-	htmlRes: (response: string, statuscode?: number) => void;
-	jsonRes: (response: any, statuscode?: number) => void;
-	run: () => void;
+  _register: IControllerRegister;
+  _rawRes: (
+    response: any,
+    headers: any,
+    statuscode: number,
+  ) => void;
+  htmlRes: (response: string, statuscode?: number) => void;
+  jsonRes: (response: any, statuscode?: number) => void;
+  run: () => void;
 }
