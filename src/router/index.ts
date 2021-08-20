@@ -1,9 +1,17 @@
-import { IRegister, IRouter, RouteCallback } from './interfaces';
+import {
+  IRegister,
+  IRouter,
+  RouteCallback,
+} from './interfaces';
 
 export class Router implements IRouter {
   _register?: IRegister[] = [];
 
-  _createRoute(method: string, url: string, callback: RouteCallback): void {
+  _createRoute(
+    method: string,
+    url: string,
+    callback: RouteCallback,
+  ): void {
     if (!this._register) {
       throw new Error('Cannot set into this._register');
     }

@@ -8,17 +8,27 @@ export class RouteGenerator {
     this.router = router;
   }
 
-  generateRoutes(req: http.IncomingMessage, res: http.ServerResponse) {
+  generateRoutes(
+    req: http.IncomingMessage,
+    res: http.ServerResponse,
+  ) {
     if (!this.router._register) {
-      throw new Error('Cannot get the _register from the router');
+      throw new Error(
+        'Cannot get the _register from the router',
+      );
     }
 
-    this.router._register.forEach(({ url, method, callback }: IRegister): void => {
-      if (req.url === url && req.method?.toLowerCase() === method) {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/html');
-        callback(req, res);
-      }
-    });
+    this.router._register.forEach(
+      ({ url, method, callback }: IRegister): void => {
+        if (
+          req.url === url &&
+          req.method?.toLowerCase() === method
+        ) {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/html');
+          callback(req, res);
+        }
+      },
+    );
   }
 }
