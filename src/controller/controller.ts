@@ -4,7 +4,7 @@ import {
   IControllerConstructor,
 } from './interfaces';
 
-import { log } from '../helpers'
+import { log } from '../helpers';
 
 export const Controller: IControllerConstructor = class Controller
   implements IController
