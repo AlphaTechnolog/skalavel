@@ -4,6 +4,8 @@ import {
   IControllerConstructor,
 } from './interfaces';
 
+import { log } from '../helpers'
+
 export const Controller: IControllerConstructor = class Controller
   implements IController
 {
@@ -22,7 +24,7 @@ export const Controller: IControllerConstructor = class Controller
     headers: any,
     statuscode: number,
   ): void {
-    this._register.res = JSON.stringify(response);
+    this._register.res = response;
     this._register.headers = headers;
     this._register.statuscode = statuscode;
   }
@@ -39,15 +41,11 @@ export const Controller: IControllerConstructor = class Controller
 
   jsonRes(response: any, statuscode: number = 200): void {
     this._rawRes(
-      response,
+      JSON.stringify(response),
       {
         'Content-Type': 'application/json',
       },
       statuscode,
     );
-  }
-
-  run(): void {
-    console.log('ok');
   }
 };

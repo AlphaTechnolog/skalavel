@@ -15,5 +15,4 @@ export interface IController {
   ) => void;
   htmlRes: (response: string, statuscode?: number) => void;
   jsonRes: (response: any, statuscode?: number) => void;
-  run: () => void;
 }
