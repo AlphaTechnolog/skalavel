@@ -1,6 +1,7 @@
 import * as http from 'http';
 import { IRouter, IRegister } from '../router/interfaces';
 import { IController } from '../controller/interfaces';
+import { BreakException } from '../helpers';
 
 export class RouteGenerator {
   router: IRouter;
@@ -19,24 +20,54 @@ export class RouteGenerator {
       );
     }
 
-    this.router._register.forEach(
-      ({ url, method, callback }: IRegister): void => {
-        if (
-          req.url === url &&
-          req.method?.toLowerCase() === method
-        ) {
-          const controller: IController = callback(req, res);
-          const { _register } = controller;
-          res.statusCode = _register.statuscode;
-          for (const [name, value] of Object.entries(
-            _register.headers,
-          )) {
-            res.setHeader(name as string, value as string);
+    try {
+      this.router._register.forEach(
+        ({ url, method, callback }: IRegister): void => {
+          const reqUrl: string | undefined = req.url;
+
+          if (!reqUrl) {
+            throw new Error(
+              'Cannot get the url from the client socket',
+            );
           }
 
-          res.end(_register.res);
-        }
-      },
-    );
+          // Appending the / in the base router url
+          if (url[url.length - 1] !== '/') {
+            url += '/';
+          }
+
+          // If not have the last / in `req.url` redirecting to the route with the last /
+          if (
+            reqUrl[reqUrl.length - 1] !== '/' &&
+            reqUrl + '/' === url
+          ) {
+            res.statusCode = 302;
+            res.setHeader('location', url);
+            res.end('');
+            throw BreakException;
+          }
+
+          if (
+            reqUrl === url &&
+            req.method?.toLowerCase() === method
+          ) {
+            const controller: IController = callback(req, res);
+            const { _register } = controller;
+            res.statusCode = _register.statuscode;
+            for (const [name, value] of Object.entries(
+              _register.headers,
+            )) {
+              res.setHeader(name as string, value as string);
+            }
+
+            res.end(_register.res);
+          }
+        },
+      );
+    } catch (err) {
+      if (err !== BreakException) {
+        throw err;
+      }
+    }
   }
 }
