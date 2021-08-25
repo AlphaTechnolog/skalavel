@@ -20,9 +20,7 @@ export class Server implements IServer {
   _createServer(): void {
     this.server = http.createServer((req, res) => {
       if (!this.router) {
-        throw new Error(
-          'No router detected, you was created a router?',
-        );
+        throw new Error('No router detected, you was created a router?');
       }
 
       const routeGenerator = new RouteGenerator(this.router);

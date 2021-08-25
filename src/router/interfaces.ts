@@ -6,10 +6,7 @@ export type RouteCallback = (
   res: http.ServerResponse,
 ) => IController;
 
-export type RouteParams = (
-  url: string,
-  callback: RouteCallback,
-) => void;
+export type RouteParams = (url: string, callback: RouteCallback) => void;
 
 export interface IRegister {
   method: string;
@@ -19,11 +16,7 @@ export interface IRegister {
 
 export interface IRouter {
   _register?: IRegister[];
-  _createRoute: (
-    method: string,
-    url: string,
-    callback: RouteCallback,
-  ) => void;
+  _createRoute: (method: string, url: string, callback: RouteCallback) => void;
   get: RouteParams;
   post: RouteParams;
   put: RouteParams;
