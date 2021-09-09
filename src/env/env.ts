@@ -23,6 +23,10 @@ export class Env implements IEnv {
       })
     }
   }
+
+  getParsedValue<V>(k: string): V {
+    return global.fetch<object>('environment')[k];
+  }
 }
 
 export const env: Env = new Env()
