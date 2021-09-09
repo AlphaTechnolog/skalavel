@@ -343,6 +343,10 @@ Version 0.1.5:
 
 - Updated README.md
 
+Version 0.1.6:
+
+- Fixing README.md problems
+
 ## Examples
 
 Coming soon...
