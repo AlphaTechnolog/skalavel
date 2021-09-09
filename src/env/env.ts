@@ -25,7 +25,7 @@ export class Env implements IEnv {
   }
 
   getParsedValue<V>(k: string): V {
-    return global.fetch<object>('environment')[k];
+    return global.fetch<object>('environment')[k]
   }
 }
 
