@@ -331,6 +331,10 @@ Version 0.1.2:
 
 - Added Changelog to `README.md`
 
+Version 0.1.3:
+
+- Removed testing `.env` file
+
 ## Examples
 
 Coming soon...
