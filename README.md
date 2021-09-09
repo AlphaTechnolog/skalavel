@@ -335,6 +335,10 @@ Version 0.1.3:
 
 - Removed testing `.env` file
 
+Version 0.1.4:
+
+- Added an option in the environment library to get a parsed dotenv value
+
 ## Examples
 
 Coming soon...
