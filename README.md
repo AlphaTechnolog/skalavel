@@ -319,3 +319,18 @@ Skalavel is rewrited because:
 
 Now Skalavel is to manually to programming, I'm engaged to create a cli (like Archos.js cli)
 for skalavel, but in `npm`
+
+## Changelog
+
+Version 0.1.1:
+
+- Created a global app state named `global` at `skalavel` package
+- Created a environment parser (`.env` parser with dotenv) named `env` it load's all data in the global state
+
+Version 0.1.2:
+
+- Added Changelog to `README.md`
+
+## Examples
+
+Coming soon...
