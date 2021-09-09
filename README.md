@@ -339,6 +339,10 @@ Version 0.1.4:
 
 - Added an option in the environment library to get a parsed dotenv value
 
+Version 0.1.5:
+
+- Updated README.md
+
 ## Examples
 
 Coming soon...
