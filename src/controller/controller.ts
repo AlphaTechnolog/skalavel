@@ -1,24 +1,30 @@
-import * as http from 'http'
+import * as http from 'http';
 
-import {IControllerRegister, IController, IControllerConstructor} from './interfaces'
+import {
+  IControllerRegister,
+  IController,
+  IControllerConstructor,
+} from './interfaces';
 
-export const Controller: IControllerConstructor = class Controller implements IController {
-  _register: IControllerRegister
-  req: http.IncomingMessage
+export const Controller: IControllerConstructor = class Controller
+  implements IController
+{
+  _register: IControllerRegister;
+  req: http.IncomingMessage;
 
   constructor(req: http.IncomingMessage) {
-    this.req = req
+    this.req = req;
     this._register = {
       res: '',
-      headers: {'Content-Type': 'text/html'},
+      headers: { 'Content-Type': 'text/html' },
       statuscode: 200,
-    }
+    };
   }
 
   _rawRes(response: any, headers: any, statuscode: number): void {
-    this._register.res = response
-    this._register.headers = headers
-    this._register.statuscode = statuscode
+    this._register.res = response;
+    this._register.headers = headers;
+    this._register.statuscode = statuscode;
   }
 
   htmlRes(response: string, statuscode: number = 200): void {
@@ -28,7 +34,7 @@ export const Controller: IControllerConstructor = class Controller implements IC
         'Content-Type': 'text/html',
       },
       statuscode,
-    )
+    );
   }
 
   jsonRes(response: any, statuscode: number = 200): void {
@@ -38,10 +44,10 @@ export const Controller: IControllerConstructor = class Controller implements IC
         'Content-Type': 'application/json',
       },
       statuscode,
-    )
+    );
   }
 
   redirect(url: string): void {
-    this._rawRes('', {location: url}, 302)
+    this._rawRes('', { location: url }, 302);
   }
-}
+};

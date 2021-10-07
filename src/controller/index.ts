@@ -1,2 +1,2 @@
-export * from './controller'
-export * from './loader'
+export * from './controller';
+export * from './loader';

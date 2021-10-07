@@ -1,1 +1,1 @@
-export const BreakException = {}
+export const BreakException = {};
