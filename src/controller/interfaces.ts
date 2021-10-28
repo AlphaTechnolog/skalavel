@@ -7,7 +7,7 @@ export interface IControllerRegister {
 }
 
 export type IControllerConstructor = new (
-  req: http.IncomingMessage,
+  req: http.IncomingMessage
 ) => IController;
 
 export interface IController {

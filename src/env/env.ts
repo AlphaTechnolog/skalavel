@@ -7,14 +7,14 @@ export class Env implements IEnv {
     const { parsed: env } = dotenv.config({ path: ".env" });
     if (!env) {
       throw new Error(
-        "[Skalavel Environment]: Cannot get the parsed environment from dotenv",
+        "[Skalavel Environment]: Cannot get the parsed environment from dotenv"
       );
     }
     global.set<object>("environment", {});
     for (const [parsed, parsedValue] of Object.entries(env)) {
       if (verbose === true) {
         log.info(
-          `[Skalavel Environment]: Parsed ${parsed} (${parsedValue}), adding to global state...`,
+          `[Skalavel Environment]: Parsed ${parsed} (${parsedValue}), adding to global state...`
         );
       }
       global.set("environment", {

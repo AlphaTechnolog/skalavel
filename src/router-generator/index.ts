@@ -58,7 +58,7 @@ export class RouteGenerator {
               res.end(_register.res);
             });
           }
-        },
+        }
       );
     } catch (err) {
       if (err !== BreakException) {

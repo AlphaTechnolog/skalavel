@@ -33,7 +33,7 @@ export const Controller: IControllerConstructor = class Controller
       {
         "Content-Type": "text/html",
       },
-      statuscode,
+      statuscode
     );
   }
 
@@ -43,7 +43,7 @@ export const Controller: IControllerConstructor = class Controller
       {
         "Content-Type": "application/json",
       },
-      statuscode,
+      statuscode
     );
   }
 
