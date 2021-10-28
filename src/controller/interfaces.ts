@@ -1,4 +1,4 @@
-import { Request } from 'express'
+import { Request } from "express";
 
 export interface IControllerRegister {
   res: string;
@@ -6,9 +6,7 @@ export interface IControllerRegister {
   headers: any;
 }
 
-export type IControllerConstructor = new (
-  req: Request
-) => IController;
+export type IControllerConstructor = new (req: Request) => IController;
 
 export interface IController {
   req: Request;

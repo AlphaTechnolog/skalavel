@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from 'express'
+import express, { Express, Request, Response } from "express";
 import { IRouter } from "../router/interfaces";
 import { ITaskConstructor } from "../tasks/interfaces";
 import { IServer } from "./interfaces";
@@ -18,22 +18,22 @@ export class Server implements IServer {
   }
 
   _createServer(): void {
-    this.server = express()
-    this.server.use(express.json())
-    this.server.use(express.urlencoded({ extended: true }))
+    this.server = express();
+    this.server.use(express.json());
+    this.server.use(express.urlencoded({ extended: true }));
     if (!this.router) {
       this.server.use((_req: Request, res: Response): void => {
         res.status(500).json({
           error: true,
-          message: 'The server does not provide any router'
-        })
-      })
+          message: "The server does not provide any router",
+        });
+      });
 
-      return
+      return;
     }
 
-    const routeGenerator = new RouteGenerator(this.router)
-    routeGenerator.generateRoutes(this.server)
+    const routeGenerator = new RouteGenerator(this.router);
+    routeGenerator.generateRoutes(this.server);
   }
 
   _runTasks(): void {

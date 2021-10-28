@@ -1,10 +1,7 @@
-import { Request, Response } from 'express'
+import { Request, Response } from "express";
 import { IController } from "../controller/interfaces";
 
-export type RouteCallback = (
-  req: Request,
-  res: Response
-) => IController;
+export type RouteCallback = (req: Request, res: Response) => IController;
 
 export type RouteParams = (url: string, callback: RouteCallback) => void;
 

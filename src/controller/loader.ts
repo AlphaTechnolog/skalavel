@@ -1,4 +1,4 @@
-import { Request, Response } from 'express'
+import { Request, Response } from "express";
 import { IControllerConstructor, IController } from "./interfaces";
 import { RouteCallback } from "../router/interfaces";
 

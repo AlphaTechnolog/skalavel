@@ -1,4 +1,4 @@
-import { Express } from 'express'
+import { Express } from "express";
 import { IRouter } from "../router/interfaces";
 import { ITaskConstructor } from "../tasks/interfaces";
 
