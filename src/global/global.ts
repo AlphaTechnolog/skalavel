@@ -1,4 +1,4 @@
-import { IGlobal } from './interfaces';
+import { IGlobal } from "./interfaces";
 
 export class Global implements IGlobal {
   _baseState: object = {};

@@ -1,10 +1,10 @@
-import * as http from 'http';
+import * as http from "http";
 
 import {
   IControllerRegister,
   IController,
   IControllerConstructor,
-} from './interfaces';
+} from "./interfaces";
 
 export const Controller: IControllerConstructor = class Controller
   implements IController
@@ -15,8 +15,8 @@ export const Controller: IControllerConstructor = class Controller
   constructor(req: http.IncomingMessage) {
     this.req = req;
     this._register = {
-      res: '',
-      headers: { 'Content-Type': 'text/html' },
+      res: "",
+      headers: { "Content-Type": "text/html" },
       statuscode: 200,
     };
   }
@@ -31,7 +31,7 @@ export const Controller: IControllerConstructor = class Controller
     this._rawRes(
       response,
       {
-        'Content-Type': 'text/html',
+        "Content-Type": "text/html",
       },
       statuscode,
     );
@@ -41,13 +41,13 @@ export const Controller: IControllerConstructor = class Controller
     this._rawRes(
       JSON.stringify(response),
       {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       statuscode,
     );
   }
 
   redirect(url: string): void {
-    this._rawRes('', { location: url }, 302);
+    this._rawRes("", { location: url }, 302);
   }
 };

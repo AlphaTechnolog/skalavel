@@ -1,5 +1,5 @@
-import { BaseMessageData, ILog } from './interfaces';
-import 'colors';
+import { BaseMessageData, ILog } from "./interfaces";
+import "colors";
 
 export class Log implements ILog {
   baseMessage({ message, exit }: BaseMessageData): void {

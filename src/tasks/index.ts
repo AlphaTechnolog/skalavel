@@ -1,5 +1,5 @@
-import { ITask, ITaskConstructor } from './interfaces';
-import { log } from '../helpers/log';
+import { ITask, ITaskConstructor } from "./interfaces";
+import { log } from "../helpers/log";
 
 export const Task: ITaskConstructor = class Task implements ITask {
   constructor() {
@@ -11,6 +11,6 @@ export const Task: ITaskConstructor = class Task implements ITask {
   }
 
   run(): any | Promise<any> {
-    log.error('No run method specified for this task');
+    log.error("No run method specified for this task");
   }
 };

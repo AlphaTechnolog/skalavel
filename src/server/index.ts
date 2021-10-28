@@ -1,8 +1,8 @@
-import * as http from 'http';
-import { IRouter } from '../router/interfaces';
-import { ITaskConstructor } from '../tasks/interfaces';
-import { IServer } from './interfaces';
-import { RouteGenerator } from '../router-generator';
+import * as http from "http";
+import { IRouter } from "../router/interfaces";
+import { ITaskConstructor } from "../tasks/interfaces";
+import { IServer } from "./interfaces";
+import { RouteGenerator } from "../router-generator";
 
 export class Server implements IServer {
   server?: http.Server;
@@ -20,7 +20,7 @@ export class Server implements IServer {
   _createServer(): void {
     this.server = http.createServer((req, res) => {
       if (!this.router) {
-        throw new Error('No router detected, you was created a router?');
+        throw new Error("No router detected, you was created a router?");
       }
 
       const routeGenerator = new RouteGenerator(this.router);
@@ -44,7 +44,7 @@ export class Server implements IServer {
     this._createServer();
 
     if (!this.server) {
-      throw new Error('Cannot create the server');
+      throw new Error("Cannot create the server");
     }
 
     this.server.listen(port, callback);

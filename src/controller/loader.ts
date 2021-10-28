@@ -1,6 +1,6 @@
-import * as http from 'http';
-import { IControllerConstructor, IController } from './interfaces';
-import { RouteCallback } from '../router/interfaces';
+import * as http from "http";
+import { IControllerConstructor, IController } from "./interfaces";
+import { RouteCallback } from "../router/interfaces";
 
 export const controllerLoader =
   (Controller: IControllerConstructor, method: string): RouteCallback =>
