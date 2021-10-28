@@ -129,7 +129,7 @@ The internal methods are:
 
 The internal data are:
 
-- req - The http req object (http.IncomingMessage)
+- req - The http req object (express.Request)
 - \_register - The controller history register, it's processed by the controller loader
 
 The controllerLoader, receive this parameters:
