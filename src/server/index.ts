@@ -1,11 +1,11 @@
-import * as http from "http";
+import express, { Express, Request, Response } from 'express'
 import { IRouter } from "../router/interfaces";
 import { ITaskConstructor } from "../tasks/interfaces";
 import { IServer } from "./interfaces";
 import { RouteGenerator } from "../router-generator";
 
 export class Server implements IServer {
-  server?: http.Server;
+  server?: Express;
   router?: IRouter;
   tasks?: ITaskConstructor[];
 
@@ -18,14 +18,22 @@ export class Server implements IServer {
   }
 
   _createServer(): void {
-    this.server = http.createServer((req, res) => {
-      if (!this.router) {
-        throw new Error("No router detected, you was created a router?");
-      }
+    this.server = express()
+    this.server.use(express.json())
+    this.server.use(express.urlencoded({ extended: true }))
+    if (!this.router) {
+      this.server.use((_req: Request, res: Response): void => {
+        res.status(500).json({
+          error: true,
+          message: 'The server does not provide any router'
+        })
+      })
 
-      const routeGenerator = new RouteGenerator(this.router);
-      routeGenerator.generateRoutes(req, res);
-    });
+      return
+    }
+
+    const routeGenerator = new RouteGenerator(this.router)
+    routeGenerator.generateRoutes(this.server)
   }
 
   _runTasks(): void {

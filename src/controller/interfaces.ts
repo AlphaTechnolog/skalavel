@@ -1,4 +1,4 @@
-import * as http from "http";
+import { Request } from 'express'
 
 export interface IControllerRegister {
   res: string;
@@ -7,11 +7,11 @@ export interface IControllerRegister {
 }
 
 export type IControllerConstructor = new (
-  req: http.IncomingMessage
+  req: Request
 ) => IController;
 
 export interface IController {
-  req: http.IncomingMessage;
+  req: Request;
   _register: IControllerRegister;
   _rawRes(response: any, headers: any, statuscode: number): void;
   htmlRes(response: string, statuscode?: number): void;

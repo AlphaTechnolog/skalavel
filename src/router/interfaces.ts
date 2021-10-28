@@ -1,9 +1,9 @@
-import * as http from "http";
+import { Request, Response } from 'express'
 import { IController } from "../controller/interfaces";
 
 export type RouteCallback = (
-  req: http.IncomingMessage,
-  res: http.ServerResponse
+  req: Request,
+  res: Response
 ) => IController;
 
 export type RouteParams = (url: string, callback: RouteCallback) => void;

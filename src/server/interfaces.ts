@@ -1,9 +1,9 @@
-import * as http from "http";
+import { Express } from 'express'
 import { IRouter } from "../router/interfaces";
 import { ITaskConstructor } from "../tasks/interfaces";
 
 export interface IServer {
-  server?: http.Server;
+  server?: Express;
   router?: IRouter;
   tasks?: ITaskConstructor[];
   _runTasks: () => void;

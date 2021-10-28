@@ -1,4 +1,4 @@
-import * as http from "http";
+import { Request } from 'express'
 
 import {
   IControllerRegister,
@@ -10,9 +10,9 @@ export const Controller: IControllerConstructor = class Controller
   implements IController
 {
   _register: IControllerRegister;
-  req: http.IncomingMessage;
+  req: Request;
 
-  constructor(req: http.IncomingMessage) {
+  constructor(req: Request) {
     this.req = req;
     this._register = {
       res: "",

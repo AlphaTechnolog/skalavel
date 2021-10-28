@@ -6,7 +6,8 @@
     "downlevelIteration": true,
     "outDir": "./lib",
     "strict": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "esModuleInterop": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
