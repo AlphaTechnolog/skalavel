@@ -22,3 +22,14 @@ export interface IRouter {
   put: RouteParams;
   delete: RouteParams;
 }
+
+export interface IRouteLoaderConfig {
+  prefix: string,
+  controller: IController,
+}
+
+export interface IRouteLoaderRoute {
+  method: string,
+  address: string,
+  endpoint: string,
+}
