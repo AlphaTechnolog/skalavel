@@ -4,9 +4,9 @@ import { RouteCallback } from "../router/interfaces";
 
 export const controllerLoader =
   (Controller: IControllerConstructor, method: string): RouteCallback =>
-  (req: Request, _res: Response): IController => {
+  async (req: Request, _res: Response): Promise<IController> => {
     const controllerInstance: IController = new Controller(req);
     // @ts-ignore
-    controllerInstance[method]();
+    await controllerInstance[method]();
     return controllerInstance;
   };
