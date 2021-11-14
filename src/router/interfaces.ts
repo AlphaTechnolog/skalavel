@@ -24,12 +24,12 @@ export interface IRouter {
 }
 
 export interface IRouteLoaderConfig {
-  prefix: string,
-  controller: IController,
+  prefix: string;
+  controller: IController;
 }
 
 export interface IRouteLoaderRoute {
-  method: string,
-  address: string,
-  endpoint: string,
+  method: string;
+  address: string;
+  endpoint: string;
 }

@@ -1,2 +1,2 @@
-export * from './router'
-export * from './loader'
+export * from "./router";
+export * from "./loader";
