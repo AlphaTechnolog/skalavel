@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IController } from "../controller/interfaces";
+import { IController, IControllerConstructor } from "../controller/interfaces";
 
 export type RouteCallback = (
   req: Request,
@@ -25,7 +25,7 @@ export interface IRouter {
 
 export interface IRouteLoaderConfig {
   prefix: string;
-  controller: IController;
+  controller: IControllerConstructor;
 }
 
 export interface IRouteLoaderRoute {
