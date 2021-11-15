@@ -19,6 +19,7 @@ export class Server implements IServer {
 
   _createServer(): void {
     this.server = express();
+    this.server.set('json spaces', 2)
     this.server.use(express.json());
     this.server.use(express.urlencoded({ extended: true }));
     if (!this.router) {

@@ -6,3 +6,4 @@ export * from "./controller";
 export * from "./global";
 export * from "./env";
 export * from "./renderer";
+export * from "./validator";
