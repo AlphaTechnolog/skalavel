@@ -1,3 +1,3 @@
 export default (value: string, min: number): boolean => {
-  return value.length > min
-}
+  return value.length > min;
+};

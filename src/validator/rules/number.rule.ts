@@ -1,3 +1,3 @@
 export default <V>(value: V): boolean => {
-  return typeof(value) === 'number'
-}
+  return typeof value === "number";
+};

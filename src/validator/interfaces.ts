@@ -1,13 +1,13 @@
 export interface IData {
-  [key: string]: any
+  [key: string]: any;
 }
 
 export interface IDataRules {
-  [key: string]: string
+  [key: string]: string;
 }
 
 export interface IValidationErrors {
-  [key: string]: string[]
+  [key: string]: string[];
 }
 
 // export interface IValidator {

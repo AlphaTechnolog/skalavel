@@ -1,3 +1,3 @@
 export default <V>(value: V): boolean => {
-  return value === undefined
-}
+  return value === undefined;
+};
