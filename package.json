@@ -1,7 +1,7 @@
 {
   "name": "skalavel",
   "description": "A typescript framework for write complete and scalable web applications",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "main": "lib/index.js",
   "files": [
     "lib/**/*"
