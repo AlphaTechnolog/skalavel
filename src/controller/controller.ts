@@ -21,6 +21,10 @@ export const Controller: IControllerConstructor = class Controller
     };
   }
 
+  created (): void {
+    // Defining the methods to prevent some typescript errors
+  }
+
   _rawRes(response: any, headers: any, statuscode: number): void {
     this._register.res = response;
     this._register.headers = headers;
