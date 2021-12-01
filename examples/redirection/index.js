@@ -13,14 +13,12 @@ const path = require('path')
 global.set('port', 8000)
 
 class HomeController extends Controller {
-  renderer = new Renderer()
-
   created () {
     this.rendererSettings()
   }
 
   rendererSettings () {
-    console.log('hello')
+    this.renderer = new Renderer()
     this.renderer.setViewPrefix(path.join(__dirname))
   }
 

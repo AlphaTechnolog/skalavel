@@ -7,6 +7,6 @@
     "start": "node ./index.js"
   },
   "dependencies": {
-    "skalavel": "^0.1.22"
+    "skalavel": "^0.1.23"
   }
 }

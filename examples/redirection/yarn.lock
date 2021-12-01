@@ -344,10 +344,10 @@ setprototypeof@1.1.1:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
   integrity sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
 
-skalavel@^0.1.22:
-  version "0.1.22"
-  resolved "https://registry.yarnpkg.com/skalavel/-/skalavel-0.1.22.tgz#204733e80438cf19c573347e71e270c283026714"
-  integrity sha512-u7Z5qcT3HThvt8ar6hGZIXsiIxiXWNSFzYEEAdZJsQe1ijL6aTKMfML2dliCetT3CR1Tjkchev5g7SKaXpfxHw==
+skalavel@^0.1.23:
+  version "0.1.23"
+  resolved "https://registry.yarnpkg.com/skalavel/-/skalavel-0.1.23.tgz#34a6989b29de1e91fec4caf7d76e903c11ce4b29"
+  integrity sha512-bKpo1xy+j20Ypv27uwFG4hSEGlNqdtOXgyADMd+xKhMuVBX3SOpJxiIGsbOsug7Mk4D2W1aqelWdrZQBwc9PqA==
   dependencies:
     colors "^1.4.0"
     dotenv "^10.0.0"
