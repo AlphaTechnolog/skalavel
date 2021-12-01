@@ -21,7 +21,7 @@ export const Controller: IControllerConstructor = class Controller
     };
 
     // Calling the lifecycles errors
-    this.created()
+    this.created();
   }
 
   created(): void {
