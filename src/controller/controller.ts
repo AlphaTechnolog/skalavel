@@ -19,6 +19,9 @@ export const Controller: IControllerConstructor = class Controller
       headers: { "Content-Type": "text/html" },
       statuscode: 200,
     };
+
+    // Calling the lifecycles errors
+    this.created()
   }
 
   created(): void {
