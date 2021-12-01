@@ -21,7 +21,7 @@ export const Controller: IControllerConstructor = class Controller
     };
   }
 
-  created (): void {
+  created(): void {
     // Defining the methods to prevent some typescript errors
   }
 

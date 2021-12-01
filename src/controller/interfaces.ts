@@ -14,7 +14,7 @@ export interface IController {
   /**
    * A lifecycle to be executed at create the controller
    */
-  created (): void;
+  created(): void;
   /**
    * Make a http response
    * @param response The response string
